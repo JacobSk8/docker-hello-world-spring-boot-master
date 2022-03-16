@@ -8,7 +8,7 @@ node {
     def dockerImageTag = "${dockerRepoUrl}/${dockerImageName}:${env.BUILD_NUMBER}"
     
     stage('Clone Repo') { 
-      git ''
+      git 'https://github.com/JacobSk8/docker-hello-world-spring-boot-master.git'
       mvnHome = tool 'Maven 3.6.2'
     }    
   
