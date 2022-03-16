@@ -7,14 +7,14 @@ node {
     def dockerImageName = "hello-world-java"
     def dockerImageTag = "${dockerRepoUrl}/${dockerImageName}:${env.BUILD_NUMBER}"
     
-//     stage('Clone Repo') { 
-//       git ''
-//       mvnHome = tool 'Maven 3.6.2'
-//     }    
+    stage('Clone Repo') { 
+      git ''
+      mvnHome = tool 'Maven 3.6.2'
+    }    
   
     stage('Build Project') {
-//       sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
-	 sh '${mvnHome}  clean package'
+      sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+// 	 sh '${mvnHome}  clean package'
     }
 	
 	stage('Publish Tests Results'){
