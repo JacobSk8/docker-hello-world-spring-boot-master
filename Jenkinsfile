@@ -53,7 +53,7 @@ node {
 
 //       sh '${dockerHome} login -u jaboisrael@hotmail.com -p 1234Qwerty ${dockerRepoUrl}'
 //       sh '"${dockerHome} login --username=$DOCKER_HUB_LOGIN_USR --password=$DOCKER_HUB_LOGIN_PSW"'
-//       sh '${dockerHome} tag ${dockerImageName} ${dockerImageTag}'
-      sh '${dockerHome} push ${dockerImageTag}'
+      sh '${dockerHome}.tag ${dockerImageName} ${dockerImageTag}'
+      sh '${dockerHome}.push ${dockerImageTag}'
     }
 }
