@@ -14,7 +14,7 @@ node {
   
     stage('Build Project') {
 //       sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
-	 sh 'mvn  clean package'
+	 sh '${mvnHome}  clean package'
     }
 	
 	stage('Publish Tests Results'){
