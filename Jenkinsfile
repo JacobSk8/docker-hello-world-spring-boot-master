@@ -39,7 +39,7 @@ node {
 //       sh "ls -all /var/run/docker.sock"
       sh "mv ./target/hello*.jar ./data" 
       
-      dockerImage = 'docker.build("hello-world-java")'
+      dockerImage = '${dockerHome}.build("hello-world-java")'
     }
    
     stage('Deploy Docker Image'){
@@ -51,8 +51,8 @@ node {
 
       echo "Docker Image Tag Name: ${dockerImageTag}"
 
-      sh "${dockerHome} login -u admin -p admin123 ${dockerRepoUrl}"
-      sh "${dockerHome} tag ${dockerImageName} ${dockerImageTag}"
-      sh "${dockerHome} push ${dockerImageTag}"
+      sh '${dockerHome} login -u admin -p admin123 ${dockerRepoUrl}"'
+      sh '"${dockerHome} tag ${dockerImageName} ${dockerImageTag}"'
+      sh '"${dockerHome} push ${dockerImageTag}"'
     }
 }
