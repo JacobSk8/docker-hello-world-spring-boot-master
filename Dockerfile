@@ -15,7 +15,7 @@ RUN mvn package
 FROM openjdk
 
 #maintainer 
-MAINTAINER jacob.cumbal@saviasoft.com
+MAINTAINER jaboisrael@hotmail.com
 #expose port 8080
 EXPOSE 8090
 
